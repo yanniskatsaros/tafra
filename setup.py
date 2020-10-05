@@ -17,7 +17,11 @@ import os
 import sys
 import re
 
-from tafra import __version__
+# get __version__
+v = {}
+with open('tafra/version.py') as f:
+    exec(f.read(), globals(), v)
+__version__ = v['__version__']
 
 try:
     from setuptools import setup
